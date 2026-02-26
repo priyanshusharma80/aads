@@ -1,6 +1,6 @@
 import { Employee } from '../types';
 
-const departments = ['Engineering', 'Sales', 'Marketing', 'HR', 'Finance', 'Operations', 'Design', 'Product'];
+export const departments = ['Engineering', 'Sales', 'Marketing', 'HR', 'Finance', 'Operations', 'Design', 'Product'];
 const positions = ['Manager', 'Senior', 'Lead', 'Junior', 'Director', 'VP', 'Associate', 'Coordinator'];
 const statuses = ['Active', 'On Leave', 'Remote'];
 const firstNames = ['Alex', 'Jordan', 'Taylor', 'Morgan', 'Casey', 'Riley', 'Avery', 'Quinn', 'Skyler', 'Drew'];
