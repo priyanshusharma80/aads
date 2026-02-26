@@ -3,6 +3,7 @@ import DataTable from './components/DataTable';
 import { useDarkMode } from './hooks/useDarkMode';
 import { generateMockData } from './utils';
 import { Column, Employee } from './types';
+import { departments } from './utils';
 import './App.css';
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
       accessor: 'department',
       width: 150,
       sortable: true,
-      filterable: true
+      // filterable: true
     },
     {
       id: 'position',
@@ -114,6 +115,18 @@ function App() {
       </header>
 
       <main className="table-container">
+
+        <div>
+          <label htmlFor="Filter by department"></label>
+          <select onChange={(e) => {
+            const filtered = e.target.value ? data.filter(emp => emp.department === e.target.value) : data;
+          }}>
+            <option value="">All Departments</option>
+            {departments.map((item, index) => {
+              return <option id={index.toString()} value={item}>{item}</option>
+            })}
+          </select>
+        </div>
 
         <DataTable
           data={data}
